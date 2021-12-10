@@ -1,12 +1,39 @@
-from module1 import*
-from keyboard import *
-
-coun=loe_failist_listisse("country.txt")
-linn=loe_failist_listisse("linnad.txt")
-Sonastik={} #Создал словарь с помощью литерала
-
-while 1:
-
-    if read_key()=="3":
-        vastus=otsing_nimi_jargi(coun,linn)
-        print(vastus)
+from module1 import *
+sonastik={} #Создал словарь с помощью литерала
+riigid=linnad=[]
+file=open("File.txt", "r")
+for line in file:
+    k, v=line.strip().split(" - ")
+    sonastik[k.strip()] = v.strip()
+    riigid.append(k.strip())
+    linnad.append(v)
+file.close()
+#print(sonastik)
+#print(riigid)
+#print(linnad)
+while True:
+    print("Привет! Пройдёмся по странам и их столицам!")
+    print("1 - Узнать столицу страны или наоборот\n2 - Добавить новую страну и столицу\n3 - Проверь свои знания")
+    v=int(input())
+    if v==1:
+        b=int(input("Если Столицу страны - 1\nЕсли вы хотите узнать страну по столице - 2\n==>"))
+        if b==1:
+            riik=input("Введите название страны: ")
+            print("Столица этой страны ==>",sonastik[riik])
+        elif b==2:
+            linn=input("Введите название столицы: ")
+            print("Страна этой столицы ==>" , riik)
+        else:
+            print("Введи 1 или 2")
+    elif v==2:
+        a=input("Введите страну и столицу которую вы хотите добавить.(Через тире -)\n==> ")
+        file=open("File.txt" , "x")
+        file=open("File.txt" , "a")
+    elif v==3:
+        v=input("Какая столица у Эстонии? =>")
+        if v=="Tallinn":
+            print("Правильно ")
+        else:
+           print("Не правильно иди учи карту!!")
+    else:
+        print("Введи правильные цифры!")

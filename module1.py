@@ -10,9 +10,58 @@ def loe_failist_listisse(file:str)->list:
     file.close()
     return list_
 
-def otsing_nimi_jargi(coun,linn)->list:
-    """
-    """
-    a=input("Keda otsime?")
-    if a in country or linnad:
-       
+12
+21
+32
+45
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+65
+45
+1
+23
+123
+1
+
+123
+312
+312
+132
+3
+12
+123
+132
+123
+3
+12
+3
+3
+12
+321
+312
